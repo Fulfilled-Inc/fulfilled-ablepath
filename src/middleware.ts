@@ -6,16 +6,23 @@ import { routing } from "@/i18n/routing";
 const intlMiddleware = createMiddleware(routing);
 
 export async function middleware(request: NextRequest) {
-  // 1. Supabase 세션 갱신
-  const supabaseResponse = await updateSession(request);
+  // 1. Supabase 세션 갱신 (환경변수 누락 등 에러 시 무시)
+  let supabaseResponse: NextResponse | null = null;
+  try {
+    supabaseResponse = await updateSession(request);
+  } catch {
+    // Supabase 환경변수가 없거나 연결 실패 시 무시하고 intl만 처리
+  }
 
   // 2. next-intl 로케일 라우팅
   const intlResponse = intlMiddleware(request);
 
   // Supabase가 설정한 쿠키를 intl 응답에 복사
-  supabaseResponse.cookies.getAll().forEach((cookie) => {
-    intlResponse.cookies.set(cookie.name, cookie.value);
-  });
+  if (supabaseResponse) {
+    supabaseResponse.cookies.getAll().forEach((cookie) => {
+      intlResponse.cookies.set(cookie.name, cookie.value);
+    });
+  }
 
   return intlResponse;
 }
