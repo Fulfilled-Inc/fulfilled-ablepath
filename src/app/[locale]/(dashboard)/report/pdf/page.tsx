@@ -1,5 +1,15 @@
+"use client";
+
+import dynamic from "next/dynamic";
 import { MOCK_REPORT_DATA } from "@/components/reports/report-types";
-import { ReportGenerator } from "@/components/reports/report-generator";
+
+const ReportGenerator = dynamic(
+  () =>
+    import("@/components/reports/report-generator").then((mod) => ({
+      default: mod.ReportGenerator,
+    })),
+  { ssr: false }
+);
 
 /**
  * /[locale]/dashboard/report/pdf
