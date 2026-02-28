@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFBF5;
+  --foreground: #2D2A26;
+  --primary: #FF8B5E;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FFF0E6;
+  --accent: #6CB4A0;
+  --accent-foreground: #FFFFFF;
+  --muted: #F5F0EB;
+  --muted-foreground: #8A8580;
+  --border: #E8E0D8;
+  --card: #FFFFFF;
+  --card-foreground: #2D2A26;
+  --destructive: #E5484D;
+  --radius: 0.75rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-destructive: var(--destructive);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* 부드러운 스크롤 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 포커스 링 글로벌 스타일 */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+/* ═══ PDF 인쇄 스타일 ═══ */
+@media print {
+  /* 네비게이션, 헤더 등 숨기기 */
+  aside,
+  nav,
+  header,
+  .print\\:hidden {
+    display: none !important;
+  }
+
+  /* 본문 배경 흰색 */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* 리포트 모달만 표시 */
+  .print\\:static {
+    position: static !important;
+    background: white !important;
+    padding: 0 !important;
+  }
+
+  /* 페이지 여백 */
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+
+  /* 배경 색상 인쇄 허용 */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
 }
