@@ -18,13 +18,13 @@ import { cn } from "@/lib/utils";
 import { logout } from "@/app/[locale]/(auth)/actions";
 
 const navItems = [
-  { href: "/dashboard", icon: LayoutDashboard, labelKey: "nav.dashboard" },
-  { href: "/dashboard/missions", icon: BookOpen, labelKey: "nav.missions" },
-  { href: "/dashboard/mood", icon: SmilePlus, labelKey: "nav.mood" },
-  { href: "/dashboard/ai-guide", icon: Brain, labelKey: "nav.aiGuide" },
-  { href: "/dashboard/report", icon: BarChart3, labelKey: "nav.report" },
-  { href: "/dashboard/activity", icon: ClipboardList, labelKey: "nav.activity" },
-  { href: "/dashboard/settings", icon: Settings, labelKey: "nav.settings" },
+  { href: "/", icon: LayoutDashboard, labelKey: "nav.dashboard" },
+  { href: "/missions", icon: BookOpen, labelKey: "nav.missions" },
+  { href: "/mood", icon: SmilePlus, labelKey: "nav.mood" },
+  { href: "/ai-guide", icon: Brain, labelKey: "nav.aiGuide" },
+  { href: "/report", icon: BarChart3, labelKey: "nav.report" },
+  { href: "/activity", icon: ClipboardList, labelKey: "nav.activity" },
+  { href: "/settings", icon: Settings, labelKey: "nav.settings" },
 ];
 
 export function Sidebar() {
@@ -32,7 +32,7 @@ export function Sidebar() {
   const t = useTranslations();
 
   // pathname에서 locale 부분 제거하여 비교
-  const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, "");
+  const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, "") || "/";
 
   return (
     <aside className="hidden md:flex md:w-64 md:flex-col md:border-r md:border-border md:bg-card">
@@ -49,7 +49,7 @@ export function Sidebar() {
         {navItems.map((item) => {
           const isActive =
             pathWithoutLocale === item.href ||
-            (item.href !== "/dashboard" &&
+            (item.href !== "/" &&
               pathWithoutLocale.startsWith(item.href));
 
           return (

@@ -54,19 +54,19 @@ export default async function DashboardPage() {
           icon={<BookOpen className="h-6 w-6 text-primary" />}
           label={t("dashboard.todayMissions")}
           value={`${completedToday ?? 0} / 3`}
-          href="/dashboard/missions"
+          href="/missions"
         />
         <QuickStatCard
           icon={<SmilePlus className="h-6 w-6 text-accent" />}
           label={t("dashboard.moodToday")}
           value={todayMood ? getMoodEmoji(todayMood.mood) : "—"}
-          href="/dashboard/mood"
+          href="/mood"
         />
         <QuickStatCard
           icon={<Brain className="h-6 w-6 text-primary" />}
           label={t("nav.aiGuide")}
           value="Ask a question"
-          href="/dashboard/ai-guide"
+          href="/ai-guide"
         />
       </section>
 
@@ -75,7 +75,7 @@ export default async function DashboardPage() {
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-lg font-semibold">{t("dashboard.todayMissions")}</h2>
           <Link
-            href="/dashboard/missions"
+            href="/missions"
             className="flex items-center gap-1 text-sm text-primary hover:underline"
           >
             View all <ChevronRight className="h-4 w-4" />
