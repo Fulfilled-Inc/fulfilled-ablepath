@@ -1,5 +1,5 @@
 import { MOCK_REPORT_DATA } from "@/components/reports/report-types";
-import { ReportGenerator } from "@/components/reports/ReportGenerator";
+import { ReportGenerator } from "@/components/reports/report-generator";
 
 /**
  * /[locale]/dashboard/report/pdf

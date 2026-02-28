@@ -50,7 +50,7 @@ const PDFViewer = dynamic(
 
 const MonthlyReportTemplate = dynamic(
   () =>
-    import("./MonthlyReportTemplate").then((mod) => ({
+    import("./monthly-report-template").then((mod) => ({
       default: mod.MonthlyReportTemplate,
     })),
   { ssr: false }
