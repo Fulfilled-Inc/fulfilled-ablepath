@@ -27,7 +27,13 @@
     "password": "Password",
     "forgotPassword": "Forgot Password?",
     "noAccount": "Don't have an account?",
-    "hasAccount": "Already have an account?"
+    "hasAccount": "Already have an account?",
+    "displayName": "Display Name",
+    "displayNamePlaceholder": "Your name",
+    "emailPlaceholder": "you@example.com",
+    "passwordPlaceholder": "••••••••",
+    "signupSubtitle": "Start your child's growth journey",
+    "loginSubtitle": "Welcome back to your child's journey"
   },
   "dashboard": {
     "welcome": "Welcome back, {name}!",
@@ -174,5 +180,35 @@
     "backToReport": "Back to Report",
     "premiumBadge": "Premium",
     "mockNotice": "Currently displaying with mock data. Accurate reports will be generated after real data integration."
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "users": "User Management",
+    "missions": "Mission Monitoring",
+    "settings": "Settings",
+    "backToApp": "Back to App",
+    "overview": "Overview",
+    "totalUsers": "Total Users",
+    "totalMissions": "Created Missions",
+    "recentActivity": "Recent Activity"
+  },
+  "therapist": {
+    "title": "Therapist Dashboard",
+    "myChildren": "My Patients",
+    "writeLog": "Write Therapy Log",
+    "recentLogs": "Recent Logs",
+    "viewReport": "View Report",
+    "settings": "Settings",
+    "backToApp": "Back to App",
+    "connectedParents": "Connected Parents",
+    "writeNewPrompt": "Log a new session..."
+  },
+  "secureReport": {
+    "title": "Therapist's Secure Report 💌",
+    "viewAll": "View All",
+    "newBadge": "New",
+    "therapist": "Therapist",
+    "noReport": "No secure report has been written yet.",
+    "observation": "Therapist's Observation"
   }
 }

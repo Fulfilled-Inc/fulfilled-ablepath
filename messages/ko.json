@@ -27,7 +27,13 @@
     "password": "비밀번호",
     "forgotPassword": "비밀번호를 잊으셨나요?",
     "noAccount": "아직 계정이 없으신가요?",
-    "hasAccount": "이미 계정이 있으신가요?"
+    "hasAccount": "이미 계정이 있으신가요?",
+    "displayName": "표시 이름",
+    "displayNamePlaceholder": "이름이나 애칭",
+    "emailPlaceholder": "you@example.com",
+    "passwordPlaceholder": "••••••••",
+    "signupSubtitle": "자녀의 성장 여정을 시작하세요",
+    "loginSubtitle": "자녀의 성장 여정을 계속 이어나가세요"
   },
   "dashboard": {
     "welcome": "{name}님, 환영합니다!",
@@ -174,5 +180,35 @@
     "backToReport": "리포트로 돌아가기",
     "premiumBadge": "Premium",
     "mockNotice": "현재 미리보기 데이터(Mock)로 표시 중입니다. 실제 데이터 연동 후 정확한 리포트가 생성됩니다."
+  },
+  "admin": {
+    "title": "관리자 대시보드",
+    "users": "사용자 관리",
+    "missions": "미션 모니터링",
+    "settings": "설정",
+    "backToApp": "앱으로 돌아가기",
+    "overview": "전체 요약",
+    "totalUsers": "총 가입자",
+    "totalMissions": "생성된 미션",
+    "recentActivity": "최근 활동"
+  },
+  "therapist": {
+    "title": "치료사실 대시보드",
+    "myChildren": "담당 아동 목록",
+    "writeLog": "치료 일지 작성",
+    "recentLogs": "최근 작성한 일지",
+    "viewReport": "안심 리포트 보기",
+    "settings": "설정",
+    "backToApp": "앱으로 돌아가기",
+    "connectedParents": "연결된 보호자",
+    "writeNewPrompt": "새로운 세션 기록하기..."
+  },
+  "secureReport": {
+    "title": "선생님의 안심 리포트 💌",
+    "viewAll": "전체 보기",
+    "newBadge": "새로운 기록",
+    "therapist": "치료사",
+    "noReport": "아직 작성된 안심 리포트가 없습니다.",
+    "observation": "선생님의 관찰 내용"
   }
 }

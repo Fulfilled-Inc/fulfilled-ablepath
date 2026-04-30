@@ -34,6 +34,7 @@ export async function signup(formData: FormData) {
     options: {
       data: {
         display_name: displayName,
+        role: "USER", // 기본적으로 새로 가입하는 사용자의 역할은 일반 사용자입니다.
       },
     },
   });

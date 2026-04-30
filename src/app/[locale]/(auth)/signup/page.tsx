@@ -34,7 +34,7 @@ export default function SignupPage() {
             </span>
           </Link>
           <p className="mt-2 text-muted-foreground">
-            Start your child&apos;s growth journey
+            {t("auth.signupSubtitle")}
           </p>
         </div>
 
@@ -56,14 +56,14 @@ export default function SignupPage() {
                 htmlFor="displayName"
                 className="mb-1.5 block text-sm font-medium text-card-foreground"
               >
-                Display Name
+                {t("auth.displayName")}
               </label>
               <input
                 id="displayName"
                 name="displayName"
                 type="text"
                 required
-                placeholder="Your name"
+                placeholder={t("auth.displayNamePlaceholder")}
                 className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>
@@ -80,7 +80,7 @@ export default function SignupPage() {
                 name="email"
                 type="email"
                 required
-                placeholder="you@example.com"
+                placeholder={t("auth.emailPlaceholder")}
                 className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>
@@ -98,7 +98,7 @@ export default function SignupPage() {
                 type="password"
                 required
                 minLength={6}
-                placeholder="••••••••"
+                placeholder={t("auth.passwordPlaceholder")}
                 className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>

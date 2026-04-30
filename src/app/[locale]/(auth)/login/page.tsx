@@ -34,7 +34,7 @@ export default function LoginPage() {
             </span>
           </Link>
           <p className="mt-2 text-muted-foreground">
-            Welcome back to your child&apos;s journey
+            {t("auth.loginSubtitle")}
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export default function LoginPage() {
                 name="email"
                 type="email"
                 required
-                placeholder="you@example.com"
+                placeholder={t("auth.emailPlaceholder")}
                 className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>
@@ -80,7 +80,7 @@ export default function LoginPage() {
                 name="password"
                 type="password"
                 required
-                placeholder="••••••••"
+                placeholder={t("auth.passwordPlaceholder")}
                 className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>

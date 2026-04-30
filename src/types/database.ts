@@ -5,6 +5,7 @@ export type Profile = {
   email: string;
   display_name: string | null;
   avatar_url: string | null;
+  role: "USER" | "ADMIN" | "THERAPIST"; // 치료사(THERAPIST) 권한 추가
   locale: string;
   timezone: string;
   created_at: string;
@@ -61,4 +62,28 @@ export type AiChatLog = {
   question: string;
   answer: string;
   created_at: string;
+};
+
+// --- 신규: 치료사(전문가) 관련 스키마 ---
+
+export type TherapistChildLink = {
+  id: string;
+  therapist_id: string; // 치료사(Profile) ID
+  child_id: string;     // 연결된 아이(Child) ID
+  status: "pending" | "active" | "inactive"; // 연결 상태 (초대 대기중, 활성, 비활성)
+  created_at: string;
+  updated_at: string;
+};
+
+export type TherapySessionLog = {
+  id: string;
+  therapist_id: string;
+  child_id: string;
+  session_date: string; // 치료 진행 날짜
+  title: string;        // 예: "놀이치료 3회차"
+  observation: string;  // 치료 내용, 관찰 기록 (부모 투명성 제공)
+  therapist_note: string | null; // 치료사 개인 참고 메모 (부모 비공개 옵션 등으로 확장 가능)
+  attachment_urls: string[] | null; // 사진 등 첨부파일 URL (Supabase Storage 활용)
+  created_at: string;
+  updated_at: string;
 };
